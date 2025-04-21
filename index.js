@@ -34,6 +34,10 @@ io.on('connection' , (socket)=>{
     socket.on('stopped_typing', ()=>{
         socket.broadcast.emit('show_typing_status')
     })
+
+    sokcet.on("disconnect" , ()=>{
+        console.log(`User with the id ${socket.id} left the channel`)
+    })
 })
 
 
